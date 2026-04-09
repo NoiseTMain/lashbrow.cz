@@ -3,441 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pure Beauty | Kosmetické Studio</title>
+    <meta name="description" content="Andrea Leitnerová – Lash & Beauty. Profesionální péče o řasy, obočí a hladkou pokožku v Příbrami.">
+    <title>Andrea Leitnerová | Lash & Beauty</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #d4a373;
-            --primary-light: #e9edc9;
-            --accent: #faedcd;
-            --bg-soft: #fefae0;
-            --bg-white: #ffffff;
-            --text-dark: #4a4a4a;
-            --text-light: #7a7a7a;
-            --pink-soft: #fff5f5;
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--text-dark);
-            line-height: 1.6;
-            background-color: var(--bg-white);
-        }
-
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-        }
-
-        section {
-            padding: 80px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .container {
-            width: 100%;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 15px 35px;
-            background-color: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: var(--transition);
-            font-weight: 500;
-            border: none;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-        }
-
-        .btn:hover {
-            background-color: #bc8a5f;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(212, 163, 115, 0.3);
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), 
-                        url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=2000') no-repeat center center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            max-width: 100%;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            padding: 20px;
-        }
-
-        .hero-content h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            margin-bottom: 20px;
-            color: #2d2d2d;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: var(--text-dark);
-        }
-
-        /* Services Section */
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 2px;
-            background: var(--primary);
-            margin: 0 auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: var(--pink-soft);
-            padding: 40px 30px;
-            border-radius: 15px;
-            text-align: center;
-            transition: var(--transition);
-            border: 1px solid transparent;
-        }
-
-        .service-card:hover {
-            background: white;
-            border-color: var(--accent);
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
-        .service-card i {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .service-card h3 {
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-
-        /* About Section */
-        .about {
-            display: flex;
-            flex-direction: column;
-            gap: 50px;
-            align-items: center;
-        }
-
-        @media (min-width: 768px) {
-            .about {
-                flex-direction: row;
-            }
-            .about-text, .about-img {
-                flex: 1;
-            }
-        }
-
-        .about-img img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 20px 20px 0px var(--accent);
-        }
-
-        .about-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        /* Reviews */
-        .bg-accent {
-            background-color: var(--pink-soft);
-            max-width: 100%;
-        }
-
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .review-card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            font-style: italic;
-        }
-
-        .review-card .name {
-            display: block;
-            margin-top: 20px;
-            font-style: normal;
-            font-weight: 600;
-            color: var(--primary);
-        }
-
-        /* Gallery */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-
-        .gallery-grid img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 10px;
-            transition: var(--transition);
-            filter: grayscale(20%);
-        }
-
-        .gallery-grid img:hover {
-            filter: grayscale(0%);
-            transform: scale(1.03);
-        }
-
-        /* CTA Section */
-        .cta-banner {
-            background: var(--accent);
-            text-align: center;
-            border-radius: 20px;
-            padding: 60px 40px;
-        }
-
-        /* Contact Form */
-        .contact-container {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-family: inherit;
-        }
-
-        .form-group input:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        /* Footer */
-        footer {
-            background: #2d2d2d;
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            text-align: left;
-        }
-
-        .social-links a {
-            color: white;
-            margin-right: 15px;
-            text-decoration: none;
-            font-size: 1.2rem;
-        }
-
-        .footer-bottom {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #444;
-            font-size: 0.8rem;
-            color: #aaa;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Pure Beauty Studio</h1>
-            <p>Vaše přirozená krása, naše profesionální péče. Dopřejte si relaxaci v elegantním prostředí.</p>
-            <a href="#kontakt" class="btn">Objednat se</a>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <img src="https://i.postimg.cc/RCNs8ZZS/IMG-2669.png" alt="Andrea Leitnerová Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">O mně</a></li>
+                <li><a href="#services">Služby</a></li>
+                <li><a href="#pricelist">Ceník</a></li>
+                <li><a href="#gallery">Galerie</a></li>
+                <li><a href="#reviews">Recenze</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content fade-in">
+            <h1>Zvýrazněte svou přirozenou krásu</h1>
+            <p>Profesionální péče o řasy, obočí a hladkou pokožku v příjemném a klidném prostředí.</p>
+            <a href="#contact" class="btn">Objednat se</a>
         </div>
     </header>
 
-    <section id="sluzby">
-        <div class="section-title">
-            <h2>Naše Služby</h2>
-            <p>To nejlepší pro vaši pleť a sebevědomí</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Permanentní Make-up</h3>
-                <p>Dokonalé obočí a rty, které vydrží. Šetřete svůj čas každé ráno.</p>
-            </div>
-            <div class="service-card">
-                <h3>Laminace Řas & Obočí</h3>
-                <p>Zvýraznění přirozené krásy vašich očí s dlouhotrvajícím efektem.</p>
-            </div>
-            <div class="service-card">
-                <h3>Hloubkové Čištění</h3>
-                <p>Profesionální péče o pleť pomocí moderních ultrazvukových metod.</p>
-            </div>
-            <div class="service-card">
-                <h3>Chemický Peeling</h3>
-                <p>Obnova a projasnění pleti, redukce pigmentových skvrn a vrásek.</p>
-            </div>
+    <section id="about" class="section fade-in">
+        <div class="container about-content">
+            <h2>O mně</h2>
+            <p>Jmenuji se <strong>Andrea Leitnerová</strong> a specializuji se na profesionální péči o řasy, obočí a hladkou pokožku.</p>
+            <p>Ve své práci kladu důraz na přirozený výsledek, detail a individuální přístup ke každé klientce. Věřím, že krása by měla působit jemně, upraveně a zároveň přirozeně – tak, abyste se cítila sebevědomě každý den.</p>
+            <p>Zaměřuji se především na prodlužování řas, lash filler, laminaci obočí a laserovou (diodovou) epilaci. Každé ošetření přizpůsobuji na míru podle typu řas, obočí i pokožky.</p>
+            <p>Pravidelně se vzdělávám a sleduji nové trendy, abych mohla nabídnout kvalitní a moderní služby.</p>
+            <p>Mým cílem je, abyste odcházela nejen krásnější, ale i odpočatá a spokojená.</p>
         </div>
     </section>
 
-    <section id="o-mne" class="bg-accent">
-        <div class="about">
-            <div class="about-img">
-                <img src="https://images.unsplash.com/photo-1552668693-d07c8e40ca15?auto=format&fit=crop&q=80&w=800" alt="Kosmetička">
-            </div>
-            <div class="about-text">
-                <h2>O mě</h2>
-                <p>Jmenuji se Anna a kosmetice se věnuji již přes 10 let. Má práce je pro mě vášní i posláním. Neustále se vzdělávám v nejnovějších trendech, abych vám mohla nabídnout tu nejlepší péči.</p>
-                <br>
-                <p>V mém studiu kladu důraz na individuální přístup, soukromí a maximální hygienu. Používám výhradně prémiovou francouzskou kosmetiku.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="recenze">
-        <div class="section-title">
-            <h2>Co říkají klientky</h2>
-        </div>
-        <div class="reviews-grid">
-            <div class="review-card">
-                <p>"Nejlepší laminace řas, jakou jsem kdy měla. Prostředí je nádherné a paní Anna je moc milá."</p>
-                <span class="name">— Lucie M.</span>
-            </div>
-            <div class="review-card">
-                <p>"Konečně jsem našla studio, kde mi vyčistili pleť bez podráždění. Doporučuji všemi deseti!"</p>
-                <span class="name">— Jana K.</span>
-            </div>
-            <div class="review-card">
-                <p>"Permanentní make-up obočí vypadá naprosto přirozeně. Skvělá práce a profesionální přístup."</p>
-                <span class="name">— Petra S.</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="galerie">
-        <div class="section-title">
-            <h2>Galerie Prací</h2>
-        </div>
-        <div class="gallery-grid">
-            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=80&w=500" alt="Práce 1">
-            <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80&w=500" alt="Práce 2">
-            <img src="https://images.unsplash.com/photo-1570172619241-1051515229c1?auto=format&fit=crop&q=80&w=500" alt="Práce 3">
-            <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&q=80&w=500" alt="Práce 4">
-        </div>
-    </section>
-
-    <section>
-        <div class="cta-banner">
-            <h2>Zarezervujte si svůj termín ještě dnes</h2>
-            <p>Těším se na vaši návštěvu v našem oázu klidu.</p>
-            <br>
-            <a href="tel:+420123456789" class="btn">Zavolat a objednat</a>
-        </div>
-    </section>
-
-    <section id="kontakt">
-        <div class="section-title">
-            <h2>Napište nám</h2>
-        </div>
-        <div class="contact-container">
-            <form action="#">
-                <div class="form-group">
-                    <input type="text" placeholder="Vaše jméno" required>
+    <section id="services" class="section bg-light fade-in">
+        <div class="container">
+            <h2>Služby</h2>
+            <div class="grid cards">
+                <div class="card">
+                    <h3>Prodlužování řas</h3>
+                    <p>Precizní aplikace pro přirozený i výraznější vzhled, přesně podle vašich představ.</p>
                 </div>
-                <div class="form-group">
-                    <input type="email" placeholder="E-mailová adresa" required>
+                <div class="card">
+                    <h3>Lash filler</h3>
+                    <p>InLei výživa a natočení přírodních řas, které zaručí jejich objem a zdravý růst.</p>
                 </div>
-                <div class="form-group">
-                    <input type="tel" placeholder="Telefonní číslo">
+                <div class="card">
+                    <h3>Laminace obočí</h3>
+                    <p>Zafixování neposedných chloupků pro plný, upravený a moderní tvar obočí.</p>
                 </div>
-                <div class="form-group">
-                    <textarea rows="5" placeholder="Vaše zpráva"></textarea>
+                <div class="card">
+                    <h3>Diodová epilace</h3>
+                    <p>Bezpečné a dlouhodobé odstranění chloupků s maximálním komfortem pro vaši pokožku.</p>
                 </div>
-                <button type="submit" class="btn" style="width: 100%;">Odeslat zprávu</button>
-            </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricelist" class="section fade-in">
+        <div class="container">
+            <h2>Ceník</h2>
+            <div class="pricelist-grid">
+                <div class="price-category">
+                    <h3>Řasy</h3>
+                    <ul>
+                        <li><span>Nový set</span><span>1800 Kč</span></li>
+                        <li><span>Doplnění do 3 týdnů</span><span>950 Kč</span></li>
+                        <li><span>Doplnění do 4 týdnů</span><span>1200 Kč</span></li>
+                        <li><span>Odstranění řas</span><span>350 Kč</span></li>
+                        <li><span>Lash filler</span><span>1000 Kč</span></li>
+                    </ul>
+                </div>
+                <div class="price-category">
+                    <h3>Obočí</h3>
+                    <ul>
+                        <li><span>Úprava obočí</span><span>400 Kč</span></li>
+                        <li><span>Laminace</span><span>800 Kč</span></li>
+                        <li><span>Botox</span><span>100 Kč</span></li>
+                    </ul>
+                </div>
+                <div class="price-category">
+                    <h3>Epilace</h3>
+                    <ul>
+                        <li><span>Brada</span><span>390 Kč</span></li>
+                        <li><span>Podpaží</span><span>790 Kč</span></li>
+                        <li><span>Ruce</span><span>1390 Kč</span></li>
+                        <li><span>Břicho</span><span>1390 Kč</span></li>
+                        <li><span>Záda</span><span>2100 Kč</span></li>
+                        <li><span>Stehna / Lýtka</span><span>1390 Kč</span></li>
+                        <li><span>Celé nohy</span><span>2500 Kč</span></li>
+                        <li><span>Třísla</span><span>1000 Kč</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section bg-light fade-in">
+        <div class="container">
+            <h2>Galerie</h2>
+            <div class="gallery-grid">
+                <img src="https://i.postimg.cc/j2wJxNJq/IMG-1571.jpg" alt="Ukázka práce 1" loading="lazy">
+                <img src="https://i.postimg.cc/kG6tJ8t9/IMG-1609.jpg" alt="Ukázka práce 2" loading="lazy">
+                <img src="https://i.postimg.cc/J0DBrJB1/IMG-1610.jpg" alt="Ukázka práce 3" loading="lazy">
+                <img src="https://i.postimg.cc/rs0tVWtq/IMG-1611.jpg" alt="Ukázka práce 4" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="section fade-in">
+        <div class="container">
+            <h2>Zkušenosti klientek</h2>
+            <div id="reviews-container" class="reviews-grid">
+                <p id="loading-reviews" class="text-center">Načítám recenze...</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section bg-light fade-in">
+        <div class="container">
+            <h2>Kontakt</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <p><strong>Adresa:</strong><br> K Podlesí 626, Příbram</p>
+                    <p><strong>Telefon:</strong><br> <a href="tel:+420605549052">+420 605 549 052</a></p>
+                    <p><strong>Instagram:</strong><br> <a href="https://instagram.com/andrea_leitnerova_" target="_blank">@andrea_leitnerova_</a></p>
+                </div>
+                <div class="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2581.168758832168!2d13.992644215865231!3d49.68065407937666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b6cac68ecaf15%3A0xc07a8b417e997f74!2sK%20Podles%C3%AD%20626%2C%20261%2001%20P%C5%99%C3%ADbram!5e0!3m2!1scs!2scz!4v1690000000000!5m2!1scs!2scz" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer>
-        <div class="footer-content">
-            <div>
-                <h3>Pure Beauty</h3>
-                <p>Luxusní péče pro vaši pleť v srdci města.</p>
-            </div>
-            <div>
-                <h4>Kontakt</h4>
-                <p>Ulice Krásy 123, Praha</p>
-                <p>+420 123 456 789</p>
-                <p>info@purebeauty.cz</p>
-            </div>
-            <div>
-                <h4>Otevírací doba</h4>
-                <p>Po - Pá: 09:00 - 18:00</p>
-                <p>So: Dle domluvy</p>
-            </div>
-            <div class="social-links">
-                <h4>Sledujte nás</h4>
-                <a href="#">Instagram</a>
-                <a href="#">Facebook</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Pure Beauty Studio. Všechna práva vyhrazena.</p>
+        <div class="container text-center">
+            <p>&copy; 2026 Andrea Leitnerová – Lash & Beauty. Všechna práva vyhrazena.</p>
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
-
